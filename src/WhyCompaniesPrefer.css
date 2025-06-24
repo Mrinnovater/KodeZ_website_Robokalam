@@ -1,0 +1,141 @@
+/* ------------- Base & Background ------------- */
+.companies-section {
+  padding: 70px 0;
+  background: linear-gradient(135deg, #e0f2fe 0%, #fdf2f8 100%);
+  font-family: "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+/* Centered max‑width wrapper */
+.content-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ------------- Entrance Fade/Slide ------------- */
+.fade-slide {
+  animation: fadeSlide 1s ease-out both;
+}
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+/* ------------- Section Badge ------------- */
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: inline-block;
+  background: #0ea5e9;          /* cyan badge */
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 10px;
+  margin-bottom: 48px;
+}
+.pulse-badge {
+  animation: badgePulse 3.8s ease-in-out infinite;
+}
+@keyframes badgePulse {
+  0%,100% { transform: scale(1);   }
+  50%     { transform: scale(1.05); }
+}
+
+/* ------------- Reason Card ------------- */
+.reason-block {
+  margin-bottom: 56px;
+  text-align: left;
+  background: rgba(255,255,255,0.65);
+  border-radius: 14px;
+  padding: 28px 26px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+  transition: transform .3s, box-shadow .3s;
+}
+.reason-block:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+/* Slow breathing zoom */
+.pulse-card {
+  animation: cardBreath 8s ease-in-out infinite;
+}
+@keyframes cardBreath {
+  0%,100% { transform: scale(1); }
+  50%     { transform: scale(1.03); }
+}
+
+/* ------------- Title Row ------------- */
+.reason-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+}
+
+/* Checkmark Shake */
+.checkmark {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  color: #22c55e;
+}
+.shake-icon {
+  animation: shake 4s ease-in-out infinite;
+}
+@keyframes shake {
+  0%,100% { transform: rotate(0); }
+  25%     { transform: rotate(-8deg); }
+  50%     { transform: rotate(8deg);  }
+  75%     { transform: rotate(-4deg); }
+}
+
+/* Description */
+.reason-description {
+  color: #334155;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* ------------- Quote Box ------------- */
+.quote-box {
+  background: #f1f5f9;
+  border-left: 4px solid #0ea5e9;
+  border-radius: 10px;
+  padding: 18px 22px;
+  color: #1f2937;
+  position: relative;
+  overflow: hidden;
+}
+.quote-icon {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+.quote-text {
+  font-style: italic;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+.quote-author {
+  font-weight: 600;
+  text-align: right;
+  color: #0f172a;
+}
+
+/* Slide‑in animation for quote box */
+.slide-in {
+  animation: quoteSlide 1s ease-out both;
+}
+@keyframes quoteSlide {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0);    }
+}
+
+/* ------------- Responsive ------------- */
+@media (max-width: 640px) {
+  .content-wrap { padding: 0 16px; }
+  .reason-title { font-size: 1.15rem; }
+  .section-title { font-size: 1.2rem; }
+}

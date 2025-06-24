@@ -1,0 +1,67 @@
+/* ---------- Section Wrapper ---------- */
+.offer-section {
+  padding: 70px 20px;
+  background: #ffffff;
+  text-align: center;
+}
+
+/* ---------- Heading ---------- */
+.offer-heading {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0a0a3c;
+  margin-bottom: 50px;
+}
+
+/* ---------- Grid ---------- */
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (min-width: 1440px) {
+  .offer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- Card ---------- */
+.offer-card {
+  background: #f6f7fa;
+  border-radius: 14px;
+  padding: 32px 26px;
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.offer-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- Icon ---------- */
+.offer-icon {
+  font-size: 28px;
+  margin-bottom: 18px;
+}
+
+/* ---------- Title ---------- */
+.offer-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+/* ---------- Description ---------- */
+.offer-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---------- Responsive Tweaks ---------- */
+@media (max-width: 480px) {
+  .offer-heading { font-size: 1.6rem; }
+  .offer-card    { padding: 24px 20px; }
+}

@@ -1,0 +1,81 @@
+/* src/ReportsAnalytics.css */
+
+.reports-analytics-container {
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+}
+
+.reports-analytics-container h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filter-buttons button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #eee;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filter-buttons button.active {
+  background-color: #333;
+  color: white;
+}
+
+.section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.metric-box ul {
+  margin: 0.5rem 0 1rem;
+  padding-left: 1.2rem;
+  list-style: disc;
+}
+
+.chart-placeholder {
+  background-color: #e2e8f0;
+  height: 180px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  color: #666;
+  margin-top: 1rem;
+}
+
+
+.report-graph {
+  margin-top: 12px;
+  width: 300px;
+  height: 200px;         /* Set max height */
+  object-fit: contain;   /* Keeps full image visible without stretching */
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .report-graph {
+    height: 200px;
+  }
+}

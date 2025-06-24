@@ -1,0 +1,434 @@
+/* ===== Base ===== */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  font-weight: 400;
+  background: #f5f5f5;
+}
+
+.student-dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+
+/* ===== Sidebar (Desktop Style) ===== */
+.sidebar {
+  width: 230px;
+  background-color: #e5e5e5;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-item {
+  width: 170px;
+  height: 48px; /* ✅ Ensures consistent vertical centering */
+  padding: 0 12px;
+  margin: 6px 0;
+  background: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center; /* ✅ Vertically centers icon + text */
+  justify-content: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.sidebar-item svg {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.sidebar-item.active {
+  background-color: #d1e0ff;
+  font-weight: 600;
+}
+
+.sidebar-item.logout {
+  background: #ffffff;
+  margin-top: 20px;
+}
+
+
+/* ===== Dashboard Main Area ===== */
+.dashboard {
+  flex: 1;
+  padding: 20px;
+  background: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  cursor: pointer;
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* ===== Analytics Box ===== */
+.analytics-box {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  row-gap: 14px;
+  column-gap: 30px;
+  align-items: center;
+  background: #fff6f6;
+  padding: 20px;
+  border-radius: 14px;
+  border-left: 6px solid #ffb3b3;
+  box-shadow: 0 0 6px rgba(255, 102, 102, 0.15);
+}
+
+.analytics-box p {
+  margin: 0;
+  font-size: 15px;
+  color: #333;
+}
+
+.analytics-box p strong {
+  color: #000;
+  font-weight: 600;
+}
+
+
+/* ===== Card Sections ===== */
+.card {
+  background: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 24px;
+  border-radius: 12px;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.card h4 {
+  margin-bottom: 10px;
+}
+
+.my-courses {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: grey;
+}
+
+
+/* ===== Empty State Box ===== */
+.empty-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.empty-box button {
+  margin-top: 10px;
+  padding: 8px 14px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+/* ===== Progress Tracker ===== */
+.progress-row > div {
+  margin-bottom: 15px;
+}
+
+.progress-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.progress-row button {
+  margin-left: 10px;
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.progress-bar {
+  background: #ddd;
+  border-radius: 10px;
+  height: 10px;
+  margin: 5px 0;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  background: #007bff;
+  border-radius: 10px;
+}
+
+
+/* ===== Schedule Section ===== */
+.schedule ul {
+  list-style: none;
+  padding: 0;
+}
+
+.schedule li {
+  margin-bottom: 8px;
+}
+
+
+/* ===== Certificate Grid ===== */
+.cert-grid {
+  display: flex;
+  gap: 100px;
+  margin-top: 10px;
+}
+
+.cert-box {
+  width: 150px;
+  height: 150px;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cert-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+/* ===== Mentor Action Hub ===== */
+.mentor-hub ul {
+  padding: 0;
+  list-style: none;
+  margin-top: 10px;
+}
+
+.mentor-hub li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.mentor-hub li svg {
+  color: black;
+}
+
+.mentor-hub strong {
+  font-weight: 700;
+  color: #000;
+}
+
+
+/* ===== Responsive Layout Adjustments ===== */
+@media (max-width: 768px) {
+  .student-dashboard-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    display: flex;
+    overflow-x: auto;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .sidebar-item {
+    flex: 0 0 auto;
+    margin: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 425px) {
+  .cert-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+/* ===== Bottom Nav Bar (Responsive <=768px) ===== */
+/* Force mobile bottom nav bar to be horizontal row layout */
+@media (max-width: 768px) {
+  .sidebar.sidebar-mobile {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #e0e0e0;
+    flex-direction: row !important; /* ✅ Force row */
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    z-index: 999;
+  }
+
+  .sidebar.sidebar-mobile .sidebar-item {
+    flex: 1 1 0;
+    display: flex !important;
+    flex-direction: row !important; /* ✅ Don't let it be column */
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    margin: 0;
+    border-radius: 0;
+    white-space: nowrap;
+  }
+
+  .sidebar.sidebar-mobile .sidebar-item span {
+    font-size: 10px;
+  }
+
+  .sidebar.sidebar-mobile .sidebar-item svg {
+    font-size: 18px;
+  }
+
+  .sidebar-desktop {
+    display: none;
+  }
+
+  .dashboard {
+    padding-bottom: 80px; /* Space for bottom nav bar */
+  }
+}
+
+
+/* Hide bottom bar on desktop */
+@media(min-width:769px){
+  .sidebar-mobile { display: none; }
+}
+
+
+/* ===== Slide-up “More” Sheet ===== */
+.more-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 1000;
+}
+
+.more-sheet {
+  width: 100%;
+  background: #fff;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  padding: 20px 24px 32px;
+  max-height: 60vh;
+  overflow-y: auto;
+  animation: slideUp .25s ease-out;
+}
+
+.more-sheet button {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 12px 0;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.sheet-icon {
+  font-size: 18px;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-box {
+  background: white;
+  padding: 30px 25px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.modal-box h3 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.modal-box p {
+  margin: 10px 0 20px;
+  font-size: 15px;
+  color: #444;
+}
+
+.modal-box button {
+  padding: 8px 18px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);   opacity: 1; }
+}

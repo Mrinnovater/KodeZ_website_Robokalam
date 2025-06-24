@@ -1,0 +1,220 @@
+/* MyMentees.css */
+
+.mentees-container {
+  padding: 40px 20px;
+  background: #f9f9f9;
+  min-height: 100vh;
+}
+
+.mentees-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.mentees-search {
+  display: block;
+  margin: 0 auto 30px auto;
+  padding: 10px 15px;
+  width: 260px;
+  max-width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.mentees-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+  justify-content: center;
+}
+
+.mentee-card {
+  background-color: white;
+  padding: 20px 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.mentee-card:hover {
+  transform: translateY(-5px);
+}
+
+.mentee-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.mentee-card h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.mentee-card p {
+  font-size: 14px;
+  margin: 4px 0;
+  text-align: center;
+}
+
+.status {
+  padding: 2px 8px;
+  border-radius: 8px;
+  color: white;
+  font-size: 12px;
+}
+
+.status.active {
+  background-color: #4CAF50;
+}
+
+.status.paused {
+  background-color: #888;
+}
+
+.progress-bar {
+  width: 100%;
+  max-width: 220px;
+  height: 6px;
+  background-color: #d3e0f0;
+  border-radius: 6px;
+  margin: 6px auto 12px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #4CAF50;
+  transition: width 0.3s ease;
+}
+
+.mentee-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.mentee-actions button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007BFF;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  width: fit-content;
+  min-width: 150px;
+  margin-bottom: 10px;
+}
+
+.mentee-actions button:hover {
+  background-color: #0056b3;
+  transform: scale(1.02);
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup-card {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 12px;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.popup-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.popup-card p,
+.popup-card textarea {
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.popup-card textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px;
+  resize: vertical;
+}
+
+.popup-card button {
+  width: 100%;
+  padding: 10px;
+  background: #007BFF;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.popup-card button:hover {
+  background: #0056b3;
+}
+
+@media screen and (max-width: 1024px) {
+  .mentees-list {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mentees-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .mentee-card {
+    max-width: 280px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mentees-list {
+    grid-template-columns: 1fr;
+  }
+
+  .mentees-container {
+    padding: 20px 10px;
+  }
+
+  .popup-card {
+    padding: 20px;
+  }
+
+  .mentee-actions {
+    gap: 8px;
+  }
+}

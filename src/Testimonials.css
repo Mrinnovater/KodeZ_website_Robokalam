@@ -1,0 +1,122 @@
+/* ========== SECTION WRAPPER ========== */
+.testimonials-section {
+  padding: 50px 20px;
+  background: #f1f5f9;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ========== HEADINGS ========== */
+.main-heading {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.section-heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #1e293b;
+}
+
+/* gradient shine + float */
+.glow-heading {
+  background: linear-gradient(90deg, #ff416c, #ff4b2b, #ff416c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shine 4s linear infinite;
+}
+@keyframes shine {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.floating-subheading {
+  animation: floaty 3.5s ease-in-out infinite;
+}
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+/* ========== CAROUSEL ========== */
+.testimonials-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.testimonials-cards {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+}
+
+/* ========== CARD ========== */
+.testimonial-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.06);
+  text-align: left;
+}
+
+/* zoom‑pulse */
+.pulse-card {
+  animation: pulseZoom 6s ease-in-out infinite;
+}
+@keyframes pulseZoom {
+  0%,100% { transform: scale(1);   box-shadow: 0 6px 16px rgba(0,0,0,.06); }
+  50%     { transform: scale(1.05); box-shadow: 0 10px 24px rgba(0,0,0,.10); }
+}
+
+/* ========== CARD HEADER ========== */
+.testimonial-header { display: flex; align-items: center; margin-bottom: 10px; }
+.icon { font-size: 1.5rem; margin-right: 10px; }
+
+.name-company .name    { font-weight: 700;  color: #0f172a; }
+.name-company .company { font-size: 0.9rem; color: #475569; }
+
+.testimonial-text {
+  font-size: 0.95rem;
+  color: #334155;
+  line-height: 1.5;
+}
+
+/* ========== NAV BUTTONS ========== */
+.nav-btn {
+  background: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  transition: background 0.2s;
+}
+.nav-btn:hover { background: #e2e8f0; }
+.left  { margin-right: 10px; }
+.right { margin-left: 10px; }
+
+/* ========== MOBILE (≤ 767px) ========== */
+@media (max-width: 767px) {
+  .testimonials-cards {
+    flex-wrap: nowrap;      /* keep cards in a single line */
+    width: 100%;
+  }
+  .testimonial-card {
+    flex: 0 0 100%;         /* each card fills full width */
+    max-width: 85%;         /* leave a little side padding */
+    margin: 0 auto;
+  }
+}
+
+/* (You can keep or remove these next tweaks for 768–1024px if desired) */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .testimonial-card { width: 280px; }
+}

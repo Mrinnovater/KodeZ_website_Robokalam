@@ -1,0 +1,176 @@
+.partners-section {
+  padding: 60px 30px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: #222;
+  position: relative;
+  overflow: hidden;
+}
+
+.partners-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.partners-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.partners-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.logo-img {
+  width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 3s ease forwards;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  will-change: transform;
+}
+
+
+.logo-img:hover {
+  transform: scale(0.03);
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+}
+.enroll-btn {
+  padding: 12px 30px;
+  background-color: #ff7b00;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 1rem;
+  position: relative;
+  z-index: 2;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 3s ease forwards;
+  animation-delay: 1.5s;
+  overflow: hidden; /* Needed for shine */
+}
+
+.enroll-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+
+.enroll-btn:hover {
+  background-color: #FA8128;
+  transform: scale(1.05);
+}
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .partners-section {
+    padding: 50px 20px;
+  }
+
+
+  .partners-section h2 {
+    font-size: 1.75rem;
+  }
+
+  .logo-grid {
+    gap: 20px;
+  }
+}
+
+/* Mobile (up to 767px) */
+@media (max-width: 767px) {
+  .partners-section {
+    padding: 40px 15px;
+  }
+
+  .partners-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .logo-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 15px;
+  }
+
+  .logo-img {
+    max-height: 60px;
+  }
+
+  .enroll-btn {
+  padding: 12px 30px;
+  background-color: #ff7b00;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 1rem;
+  position: relative;
+  z-index: 2;
+
+  /* Animation */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 3s ease forwards;
+  animation-delay: 1.5s; /* Appears after logos start fading */
+}
+
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

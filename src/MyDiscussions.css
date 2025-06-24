@@ -1,0 +1,182 @@
+/* ===== Discussions page ===== */
+.discussions-wrapper{
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 0 24px 60px;          /* bottom pad for mobile bar */
+}
+
+.discussions-header{
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:16px;
+}
+
+.discussions-header h1{
+  font-size: 38px;
+  margin:0;
+}
+
+.new-btn{
+  background:#d1e0ff;
+  border:none;
+  padding:10px 28px;
+  border-radius:10px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.filter-row{
+  margin:28px 0 12px;
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.pill{
+  background:#e4e4e4;
+  border:none;
+  padding:8px 20px;
+  border-radius:20px;
+  cursor:pointer;
+  font-size:15px;
+}
+
+.pill.active{
+  background:#007bff;
+  color:#fff;
+}
+
+.threads{
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+}
+
+.thread-card{
+  display:flex;
+  gap:18px;
+  background:#ededed;
+  border-radius:8px;
+  padding:16px;
+}
+
+.thread-card.unread{
+  border-left:6px solid #007bff;
+}
+
+.thread-card img{
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.thread-info h3{
+  margin:0 0 6px;
+  font-size:17px;
+}
+
+.thread-info .meta{
+  margin:0 0 4px;
+  font-size:13px;
+  color:#555;
+}
+
+.thread-info .snippet{
+  margin:0;
+  font-size:14px;
+  color:#222;
+}
+
+.empty{
+  font-style:italic;
+  color:#666;
+}
+
+/* small‑screen tweaks */
+@media(max-width:600px){
+  .discussions-header h1{font-size:30px}
+  .new-btn{flex:1}
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-form {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-form h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+.modal-form input,
+.modal-form select,
+.modal-form textarea {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.modal-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.post-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.post-btn:hover {
+  background-color: #0056b3;
+}
+.delete-btn {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  align-self: center;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+}
+.delete-btn:hover {
+  transform: scale(1.1);
+  background-color: #0056b3;
+}
+
+.input-error {
+  border: 2px solid red;
+  outline: none;
+}

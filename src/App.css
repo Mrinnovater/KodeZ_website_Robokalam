@@ -1,0 +1,368 @@
+/* ───────── Base Reset ───────── */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ───────── Navbar Container ───────── */
+.navbar-container {
+  width: 100%;
+}
+
+.actions-inline {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.actions-inline button {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  border-radius: 8px;
+  min-width: auto;
+  width: auto;
+}
+.bottom-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  gap: 10px;
+}
+.bottom-row .title {
+  flex: 1 1 auto;
+  font-size: 1.3rem;
+  white-space: nowrap;
+}
+/* ───────── Top Row ───────── */
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background: #ffffff;
+  position: relative;
+}
+
+/* Logo */
+.logo img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+/* Desktop Menu */
+.menu {
+  display: flex;
+  gap: 8px;
+}
+.menu button {
+  padding: 8px 16px;
+  margin-left: 8px;
+  background: #e0f0ff;
+  border: none;
+  border-radius: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.menu button:hover {
+  background: #cbe6ff;
+}
+
+/* ───────── Bottom Row ───────── */
+.bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0 30px;
+  background: #e0eee0;
+}
+
+/* Title */
+.title {
+  flex-grow: 1;
+  font-size: 22px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Desktop Actions */
+.actions,
+.actions-mobile {
+  display: flex;
+  flex-direction: row;     /* ensures horizontal layout */
+  gap: 10px;               /* spacing between buttons */
+  align-items: center;     /* vertical alignment */
+  justify-content: flex-end;  /* pushes buttons to the right if needed */
+}
+@media (min-width: 1024px) {
+  .actions button {
+    border-radius: 30px !important; /* or whatever value you prefer */
+    padding: 10px 20px; /* optional: unify padding */
+  }
+}
+.login-btn,
+.signup-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  min-width: 120px;
+  height: 44px;          /* ✅ Enforce consistent height */
+  line-height: 1;        /* ✅ Avoid unexpected text height expansion */
+  white-space: nowrap;
+  display: inline-flex;  /* ✅ Ensures proper vertical alignment */
+  align-items: center;   /* ✅ Vertically center text */
+  justify-content: center;
+}
+
+
+.login-btn:hover,
+.signup-btn:hover {
+  background: #f0f0f0;
+}
+
+
+/* ───────── Login Modal ───────── */
+.login-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);   /* subtle dim */
+  z-index:10000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* Word animation */
+.animated-word {
+  opacity: 0;
+  color: #ff6600;
+  font-weight: 700;
+  margin-left: 6px;
+  animation: fadeIn 0.8s forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ───────── Hamburger & Mobile Controls ───────── */
+.hamburger {            /* <‑‑ keep default hidden */
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+
+/* Mobile Login/Signup */
+.actions-mobile .login-btn,
+.actions-mobile .signup-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 20px;
+  border: none;
+  height: 44px;
+  min-width: 120px;
+  width: auto;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+.actions-mobile .login-btn:hover,
+.actions-mobile .signup-btn:hover {
+  background: #f0f0f0;
+  color: black;
+}
+/* ───────── Mobile Overlay Menu ───────── */
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(3px);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.mobile-menu-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.overlay-open {
+  overflow: hidden;
+}
+
+.mobile-menu-overlay button {
+  padding: 14px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 14px;
+  background: #e0f0ff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.mobile-menu-overlay button:hover {
+  background: #cbe6ff;
+}
+
+/* ───────── Responsive Breakpoints ───────── */
+@media (max-width: 1024px) {
+  .logo img {
+    width: 50px;
+    height: 50px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .bottom-row {
+    padding: 0 20px;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {       /* ≤ 768 = mobile/tablet */
+  .menu        { display: none; } /* hide desktop menu   */
+  .actions     { display: none; } /* hide desktop btns   */
+  .actions-mobile { display:flex; }
+  .hamburger   { display:block; } /* show burger         */
+  .title       { font-size: 18px; flex-grow:0; }
+  .bottom-row  { padding:10px 20px; }
+}
+@media (min-width: 769px) {
+  .actions {
+    display: flex !important;
+    gap: 10px;
+  }
+  .actions-mobile {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    width: 40px;
+    height: 40px;
+  }
+  .title {
+    font-size: 16px;
+  }
+  .actions-mobile .login-btn,
+  .actions-mobile .signup-btn {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+    .bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bottom-row .title {
+    font-size: 1.2rem;
+    text-align: left;
+    white-space: normal;
+  }
+
+  .actions-inline {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+/* Fix for inconsistent login & signup button sizing only on larger screens */
+@media (min-width: 768px) {
+  .login-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    width: auto; /* ensures it doesn’t stretch unnecessarily */
+  }
+
+  .signup-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    width: auto;
+  }
+}
+@media (max-width: 768px) {
+  .actions-mobile .login-btn,
+  .actions-mobile .signup-btn {
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 12px;
+    background: #fffae6;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    height: 40px;        /* ✅ Set same height for both */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.side-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: transparent;        /* no blur, no dim */
+  display: flex;
+  justify-content: flex-end;      /* push to right   */
+  z-index: 9999;
+}
+
+.side-popup {
+  width: 260px;
+  max-width: 80vw;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: -4px 0 12px rgba(0,0,0,.15);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: slideIn .3s ease-out;
+}
+.side-popup button {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  background: #f0f0f0;
+  transition: background .25s;
+}
+.side-popup button:hover { background:#e0e0e0; }
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+

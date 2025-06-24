@@ -1,0 +1,78 @@
+.webinars-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.back-arrow {
+  font-size: 24px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  padding: 8px 16px;
+  border: none;
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.tab-btn.active {
+  background-color: #888;
+  color: white;
+}
+
+.section-box {
+  background-color: #dcdcdc;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.webinar-card,
+.webinar-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.webinar-card img,
+.webinar-row img {
+  width: 280px; /* Increased from 180px */
+  height: 180px; /* Increased from 100px */
+  object-fit: cover;
+  border-radius: 8px;
+}
+.back-arrow {
+  font-size: 15px; /* smaller text */
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: inline-block;
+  color: #333;
+  font-weight: normal;
+}
+.arrow {
+  font-weight: bold;
+  font-size: 22px; /* You can increase this independently */
+}
+
+

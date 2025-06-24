@@ -1,0 +1,131 @@
+.company-container {
+  position: relative;
+  background-color: #fef6f8;
+  padding: 80px 20px;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.company-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/bg-handshake.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.company-header {
+  font-size: 28px;
+  font-style: italic;
+  margin-bottom: 12px;
+  color: #333;
+  position: relative;
+  z-index: 1;
+}
+
+.company-subheader {
+  font-size: 20px;
+  background: #ffffff;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  z-index: 1;
+  position: relative;
+}
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  padding: 0 10px;
+}
+
+.logo-img {
+  height: 60px;
+  object-fit: contain;
+  border-radius: 12px;
+  transition: transform 1.8s ease;
+  background: white;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Smaller logo size for Nelsis and Deloitte */
+.small-logo {
+  height: 45px !important;
+  padding: 8px !important;
+}
+
+/* Tablet (≤ 1024px) */
+@media (max-width: 1024px) {
+  .company-container {
+    padding: 60px 16px;
+  }
+
+  .company-header {
+    font-size: 24px;
+  }
+
+  .company-subheader {
+    font-size: 18px;
+    padding: 6px 12px;
+  }
+
+  .logo-grid {
+    gap: 24px;
+  }
+
+  .logo-img {
+    height: 55px;
+    padding: 8px;
+  }
+
+  .small-logo {
+    height: 40px !important;
+    padding: 6px !important;
+  }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  .company-container {
+    padding: 40px 12px;
+  }
+
+  .company-header {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .company-subheader {
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+
+  .logo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .logo-img {
+    height: 50px;
+    padding: 6px;
+  }
+
+  .small-logo {
+    height: 36px !important;
+    padding: 5px !important;
+  }
+}
